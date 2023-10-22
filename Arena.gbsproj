@@ -385,6 +385,13 @@
                     }
                 },
                 {
+                    "command": "EVENT_MUSIC_PLAY",
+                    "args": {
+                        "musicId": "49583691-8a51-4284-aa1a-f8f940a595be"
+                    },
+                    "id": "65e6748b-270a-4cd6-83ea-56d47e41cc8e"
+                },
+                {
                     "id": "dfb4c321-31ae-4e7f-a400-aae4088043d5",
                     "command": "EVENT_OVERLAY_SHOW",
                     "args": {
@@ -1652,7 +1659,7 @@
                                 "__collapseCase15": false,
                                 "value15": 16,
                                 "__collapseElse": false,
-                                "__collapse": false
+                                "__collapse": true
                             },
                             "children": {
                                 "true0": [
@@ -1735,16 +1742,35 @@
                                 },
                                 "otherActorId": "player",
                                 "__collapseElse": true,
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "children": {
                                 "true": [
                                     {
-                                        "command": "EVENT_ACTOR_ACTIVATE",
+                                        "command": "EVENT_LAUNCH_PROJECTILE",
                                         "args": {
-                                            "actorId": "$self$"
+                                            "spriteSheetId": "aa71446c-44fd-4bb7-b8d3-86c249e4df35",
+                                            "spriteStateId": "",
+                                            "actorId": "$self$",
+                                            "x": 0,
+                                            "y": 0,
+                                            "otherActorId": "$self$",
+                                            "direction": "right",
+                                            "angle": 0,
+                                            "angleVariable": "L0",
+                                            "directionType": "actor",
+                                            "initialOffset": 0,
+                                            "speed": 2,
+                                            "animSpeed": 15,
+                                            "lifeTime": 1,
+                                            "loopAnim": true,
+                                            "destroyOnHit": true,
+                                            "collisionGroup": "3",
+                                            "collisionMask": [
+                                                "player"
+                                            ]
                                         },
-                                        "id": "b4d459e0-d2af-4c2d-b9e9-e0d5f4cd214f"
+                                        "id": "aa867126-5bb7-4fde-b27f-aa9d219b686e"
                                     }
                                 ],
                                 "false": []
@@ -1973,7 +1999,7 @@
                         ],
                         "override": true,
                         "__scriptTabs": "press",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "children": {
                         "true": [
@@ -1992,7 +2018,7 @@
                                     "directionType": "actor",
                                     "initialOffset": 0,
                                     "speed": 2,
-                                    "animSpeed": 15,
+                                    "animSpeed": 255,
                                     "lifeTime": 1,
                                     "loopAnim": true,
                                     "destroyOnHit": true,
@@ -15625,9 +15651,9 @@
         "startDirection": "right",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 0,
-        "worldScrollY": 0,
-        "zoom": 47.593262672424316,
+        "worldScrollX": 182,
+        "worldScrollY": 237,
+        "zoom": 137.3069418668747,
         "customColorsEnabled": false,
         "sgbEnabled": false,
         "customHead": "",
@@ -15655,7 +15681,7 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            700,
+            711,
             30,
             30
         ],
