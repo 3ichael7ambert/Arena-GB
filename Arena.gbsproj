@@ -2150,7 +2150,7 @@
                     "name": "HP",
                     "frame": 0,
                     "animate": false,
-                    "spriteSheetId": "74d37d89-3333-4f72-bbc7-6c429e78d8c5",
+                    "spriteSheetId": "9d580e0e-98dc-4974-bbdc-bae4347bcee9",
                     "direction": "down",
                     "moveSpeed": 1,
                     "animSpeed": 15,
@@ -3636,7 +3636,7 @@
                     "name": "HP",
                     "frame": 0,
                     "animate": false,
-                    "spriteSheetId": "74d37d89-3333-4f72-bbc7-6c429e78d8c5",
+                    "spriteSheetId": "9d580e0e-98dc-4974-bbdc-bae4347bcee9",
                     "direction": "down",
                     "moveSpeed": 1,
                     "animSpeed": 15,
@@ -5122,7 +5122,7 @@
                     "name": "HP",
                     "frame": 0,
                     "animate": false,
-                    "spriteSheetId": "74d37d89-3333-4f72-bbc7-6c429e78d8c5",
+                    "spriteSheetId": "9d580e0e-98dc-4974-bbdc-bae4347bcee9",
                     "direction": "down",
                     "moveSpeed": 1,
                     "animSpeed": 15,
@@ -6608,7 +6608,7 @@
                     "name": "HP",
                     "frame": 0,
                     "animate": false,
-                    "spriteSheetId": "74d37d89-3333-4f72-bbc7-6c429e78d8c5",
+                    "spriteSheetId": "9d580e0e-98dc-4974-bbdc-bae4347bcee9",
                     "direction": "down",
                     "moveSpeed": 1,
                     "animSpeed": 15,
@@ -8094,7 +8094,7 @@
                     "name": "HP",
                     "frame": 0,
                     "animate": false,
-                    "spriteSheetId": "74d37d89-3333-4f72-bbc7-6c429e78d8c5",
+                    "spriteSheetId": "9d580e0e-98dc-4974-bbdc-bae4347bcee9",
                     "direction": "down",
                     "moveSpeed": 1,
                     "animSpeed": 15,
@@ -9580,7 +9580,7 @@
                     "name": "HP",
                     "frame": 0,
                     "animate": false,
-                    "spriteSheetId": "74d37d89-3333-4f72-bbc7-6c429e78d8c5",
+                    "spriteSheetId": "9d580e0e-98dc-4974-bbdc-bae4347bcee9",
                     "direction": "down",
                     "moveSpeed": 1,
                     "animSpeed": 15,
@@ -11066,7 +11066,7 @@
                     "name": "HP",
                     "frame": 0,
                     "animate": false,
-                    "spriteSheetId": "74d37d89-3333-4f72-bbc7-6c429e78d8c5",
+                    "spriteSheetId": "9d580e0e-98dc-4974-bbdc-bae4347bcee9",
                     "direction": "down",
                     "moveSpeed": 1,
                     "animSpeed": 15,
@@ -12552,7 +12552,7 @@
                     "name": "HP",
                     "frame": 0,
                     "animate": false,
-                    "spriteSheetId": "74d37d89-3333-4f72-bbc7-6c429e78d8c5",
+                    "spriteSheetId": "9d580e0e-98dc-4974-bbdc-bae4347bcee9",
                     "direction": "down",
                     "moveSpeed": 1,
                     "animSpeed": 15,
@@ -12707,6 +12707,32 @@
                                 ]
                             },
                             "id": "95d43608-0a9f-40e4-b90a-cdd172bb42af"
+                        },
+                        {
+                            "command": "EVENT_IF_VALUE",
+                            "args": {
+                                "variable": "L0",
+                                "operator": "==",
+                                "comparator": "0",
+                                "__collapseElse": true
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_SWITCH_SCENE",
+                                        "args": {
+                                            "sceneId": "4912bee2-387a-472f-ae4f-6679b6149517",
+                                            "x": 0,
+                                            "y": 0,
+                                            "direction": "",
+                                            "fadeSpeed": "2"
+                                        },
+                                        "id": "9c72737a-cc7e-4d9d-a5c9-7fb11e9e4fa1"
+                                    }
+                                ],
+                                "false": []
+                            },
+                            "id": "b94553a7-4e75-44fd-a59c-027d201a9120"
                         }
                     ],
                     "hit1Script": [],
@@ -15524,7 +15550,7 @@
                     "name": "HP",
                     "frame": 0,
                     "animate": false,
-                    "spriteSheetId": "74d37d89-3333-4f72-bbc7-6c429e78d8c5",
+                    "spriteSheetId": "9d580e0e-98dc-4974-bbdc-bae4347bcee9",
                     "direction": "down",
                     "moveSpeed": 1,
                     "animSpeed": 15,
@@ -21619,8 +21645,8 @@
         "startDirection": "right",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 0,
-        "worldScrollY": 0,
+        "worldScrollX": 450,
+        "worldScrollY": 115,
         "zoom": 77.35726944729686,
         "customColorsEnabled": false,
         "sgbEnabled": false,
