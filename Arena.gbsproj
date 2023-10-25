@@ -8020,7 +8020,8 @@
             "height": 32,
             "imageWidth": 256,
             "imageHeight": 256,
-            "filename": "arena10.png"
+            "filename": "arena10.png",
+            "tileColors": []
         },
         {
             "id": "9c44788b-69fd-4450-aad3-6c096ec7f1d2",
@@ -8041,7 +8042,8 @@
             "height": 32,
             "imageWidth": 256,
             "imageHeight": 256,
-            "filename": "arena3.png"
+            "filename": "arena3.png",
+            "tileColors": []
         },
         {
             "id": "8a3c7368-b30a-4147-8145-13852dba7d65",
@@ -8051,7 +8053,8 @@
             "height": 32,
             "imageWidth": 256,
             "imageHeight": 256,
-            "filename": "arena4.png"
+            "filename": "arena4.png",
+            "tileColors": []
         },
         {
             "id": "0dd44e93-13b5-46cc-b3ab-89c9774bd2f3",
@@ -8061,7 +8064,8 @@
             "height": 32,
             "imageWidth": 256,
             "imageHeight": 256,
-            "filename": "arena5.png"
+            "filename": "arena5.png",
+            "tileColors": []
         },
         {
             "id": "15d5ae46-76e0-44e5-814b-514a8bdcbb38",
@@ -8071,7 +8075,8 @@
             "height": 32,
             "imageWidth": 256,
             "imageHeight": 256,
-            "filename": "arena6.png"
+            "filename": "arena6.png",
+            "tileColors": []
         },
         {
             "id": "07ef133c-a069-4a9f-b7ed-a7ab41564bd8",
@@ -8081,7 +8086,8 @@
             "height": 32,
             "imageWidth": 256,
             "imageHeight": 256,
-            "filename": "arena7.png"
+            "filename": "arena7.png",
+            "tileColors": []
         },
         {
             "id": "765435ee-02e2-4c98-956f-358766bc4973",
@@ -8091,7 +8097,8 @@
             "height": 32,
             "imageWidth": 256,
             "imageHeight": 256,
-            "filename": "arena8.png"
+            "filename": "arena8.png",
+            "tileColors": []
         },
         {
             "id": "ac5f52d1-b312-44cc-81cd-280722a23c07",
@@ -8101,7 +8108,8 @@
             "height": 32,
             "imageWidth": 256,
             "imageHeight": 256,
-            "filename": "arena9.png"
+            "filename": "arena9.png",
+            "tileColors": []
         },
         {
             "id": "af0b361b-7455-46be-b314-420e02327a8d",
@@ -15316,8 +15324,8 @@
         "startDirection": "right",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 25,
-        "worldScrollY": 671,
+        "worldScrollX": 475,
+        "worldScrollY": 67,
         "zoom": 137.3069418668747,
         "customColorsEnabled": false,
         "sgbEnabled": false,
@@ -15346,7 +15354,7 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            971,
+            700,
             30,
             30
         ],
