@@ -310,8 +310,6 @@
                 0,
                 0,
                 0,
-                15,
-                15,
                 0,
                 0,
                 0,
@@ -330,8 +328,10 @@
                 0,
                 0,
                 0,
-                15,
-                15,
+                0,
+                0,
+                0,
+                0,
                 0,
                 0,
                 0,
@@ -1965,7 +1965,19 @@
                     "collisionGroup": "1",
                     "symbol": "actor_19",
                     "script": [],
-                    "startScript": [],
+                    "startScript": [
+                        {
+                            "command": "EVENT_SET_VALUE",
+                            "args": {
+                                "variable": "L1",
+                                "value": {
+                                    "type": "number",
+                                    "value": 3
+                                }
+                            },
+                            "id": "286f9078-ce36-4b14-97fb-120f2af90f5c"
+                        }
+                    ],
                     "updateScript": [
                         {
                             "command": "EVENT_VARIABLE_MATH",
@@ -2095,7 +2107,7 @@
                         {
                             "command": "EVENT_IF_ACTOR_DISTANCE_FROM_ACTOR",
                             "args": {
-                                "actorId": "player",
+                                "actorId": "$self$",
                                 "operator": "<=",
                                 "distance": {
                                     "type": "number",
@@ -2122,7 +2134,7 @@
                                             "directionType": "actor",
                                             "initialOffset": 0,
                                             "speed": 2,
-                                            "animSpeed": 15,
+                                            "animSpeed": 255,
                                             "lifeTime": 1,
                                             "loopAnim": true,
                                             "destroyOnHit": true,
@@ -2137,9 +2149,40 @@
                                 "false": []
                             },
                             "id": "69234856-da81-43e1-af17-ba60aa0f0c71"
+                        },
+                        {
+                            "command": "EVENT_IF_VALUE",
+                            "args": {
+                                "variable": "L1",
+                                "operator": "==",
+                                "comparator": "0",
+                                "__collapseElse": true
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_DEACTIVATE",
+                                        "args": {
+                                            "actorId": "$self$"
+                                        },
+                                        "id": "def92dd1-4efa-4c5f-bb14-b2942afddffc"
+                                    }
+                                ],
+                                "false": []
+                            },
+                            "id": "62d3a5a9-614e-4b54-9a60-c6f17702c893"
                         }
                     ],
-                    "hit1Script": [],
+                    "hit1Script": [
+                        {
+                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                            "args": {
+                                "variable": "L1",
+                                "expression": "$L1$ - 1"
+                            },
+                            "id": "0aabc728-878f-4ce7-a6f3-6024e1c03155"
+                        }
+                    ],
                     "hit2Script": [],
                     "hit3Script": [],
                     "id": "58bd97d4-b699-4ada-a851-7210367c55e3",
@@ -2372,7 +2415,7 @@
                                     "actorId": "$self$",
                                     "x": 0,
                                     "y": 0,
-                                    "otherActorId": "$self$",
+                                    "otherActorId": "player",
                                     "direction": "right",
                                     "angle": 0,
                                     "angleVariable": "L0",
@@ -2405,12 +2448,22 @@
                         "minValue": "0",
                         "maxValue": "32767",
                         "clamp": false,
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "2c55418b-2a70-40fc-9bf9-c19c7e9b30e4"
                 }
             ],
-            "playerHit1Script": [],
+            "playerHit1Script": [
+                {
+                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                    "args": {
+                        "variable": "L0",
+                        "expression": "$L0$ - 1",
+                        "__collapse": false
+                    },
+                    "id": "3dc86b34-1cc6-451e-9f0d-60713210eaa1"
+                }
+            ],
             "playerHit2Script": [],
             "playerHit3Script": [],
             "autoFadeEventCollapse": false,
@@ -15957,7 +16010,8 @@
             "height": 32,
             "imageWidth": 256,
             "imageHeight": 256,
-            "filename": "congratulations.png"
+            "filename": "congratulations.png",
+            "tileColors": []
         },
         {
             "id": "af0b361b-7455-46be-b314-420e02327a8d",
@@ -21480,7 +21534,8 @@
         },
         {
             "id": "5",
-            "name": "Quest2"
+            "name": "Quest2",
+            "symbol": "var_quest2"
         },
         {
             "id": "6",
@@ -21517,8 +21572,8 @@
         },
         {
             "id": "58bd97d4-b699-4ada-a851-7210367c55e3__L0",
-            "name": "Enemy Movement",
-            "symbol": "var_enemy_movement"
+            "name": "$Player Health",
+            "symbol": "var_player_health_10"
         },
         {
             "id": "25448203-b935-42a1-9fd8-db03bd416766__L0",
@@ -21659,6 +21714,11 @@
             "id": "828cef49-5f76-4427-aa30-66f7847cd221__L0",
             "name": "Player Health",
             "symbol": "var_player_health_8"
+        },
+        {
+            "id": "58bd97d4-b699-4ada-a851-7210367c55e3__L1",
+            "name": "health",
+            "symbol": "var_health_9"
         }
     ],
     "engineFieldValues": [
@@ -21676,8 +21736,8 @@
         "startDirection": "right",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 546,
-        "worldScrollY": 352,
+        "worldScrollX": 162,
+        "worldScrollY": 1,
         "zoom": 77.35726944729686,
         "customColorsEnabled": false,
         "sgbEnabled": false,
@@ -21706,8 +21766,8 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            700,
-            30,
+            525,
+            205,
             30
         ],
         "showNavigator": true,

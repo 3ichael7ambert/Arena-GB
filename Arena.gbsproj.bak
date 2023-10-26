@@ -15815,6 +15815,27 @@
             "playerHit3Script": [],
             "autoFadeEventCollapse": false,
             "playerSpriteSheetId": "ac1e8ef4-ffe6-47cd-b16f-9af5da77ec26"
+        },
+        {
+            "name": "Scene 13",
+            "backgroundId": "5ffd64d5-16da-4fb1-ab61-03f04485a3f8",
+            "width": 32,
+            "height": 32,
+            "type": "TOPDOWN",
+            "paletteIds": [],
+            "spritePaletteIds": [],
+            "collisions": [],
+            "autoFadeSpeed": 1,
+            "id": "08602382-76b4-4f9e-addc-60276be426be",
+            "symbol": "scene_13",
+            "x": 1047.0673291529472,
+            "y": 911.3334792507915,
+            "actors": [],
+            "triggers": [],
+            "script": [],
+            "playerHit1Script": [],
+            "playerHit2Script": [],
+            "playerHit3Script": []
         }
     ],
     "backgrounds": [
@@ -15926,6 +15947,17 @@
             "imageWidth": 256,
             "imageHeight": 256,
             "filename": "arena9.png",
+            "tileColors": []
+        },
+        {
+            "id": "5ffd64d5-16da-4fb1-ab61-03f04485a3f8",
+            "name": "congratulations",
+            "symbol": "bg_congratulations",
+            "width": 32,
+            "height": 32,
+            "imageWidth": 256,
+            "imageHeight": 256,
+            "filename": "congratulations.png",
             "tileColors": []
         },
         {
@@ -21645,7 +21677,7 @@
         "startDirection": "right",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 282,
+        "worldScrollX": 162,
         "worldScrollY": 0,
         "zoom": 77.35726944729686,
         "customColorsEnabled": false,
@@ -21675,9 +21707,9 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            349,
+            700,
             30,
-            381
+            30
         ],
         "showNavigator": true,
         "defaultFontId": "26fa15df-3318-44ad-8bfd-feff8ba7991d",
