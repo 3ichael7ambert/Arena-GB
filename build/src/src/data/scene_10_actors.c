@@ -6,6 +6,7 @@
 #include "gbs_types.h"
 #include "data/sprite_npc003.h"
 #include "data/actor_19_update.h"
+#include "data/actor_19_interact.h"
 #include "data/sprite_hp.h"
 #include "data/actor_21_update.h"
 #include "data/sprite_bullet.h"
@@ -34,6 +35,7 @@ const struct actor_t scene_10_actors[] = {
         .collision_group = COLLISION_GROUP_1,
         .collision_enabled = TRUE,
         .script_update = TO_FAR_PTR_T(actor_19_update),
+        .script = TO_FAR_PTR_T(actor_19_interact),
         .reserve_tiles = 0
     },
     {

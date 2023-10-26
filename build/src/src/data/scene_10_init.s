@@ -18,6 +18,9 @@ _scene_10_init::
         VM_RESERVE              1
 
         ; Variable Set To Value
+        VM_SET_CONST            VAR_S2A2_HEALTH, 3
+
+        ; Variable Set To Value
         VM_SET_CONST            VAR_S2A2_PLAYER_HEALTH, 4
 
         ; Input Script Attach

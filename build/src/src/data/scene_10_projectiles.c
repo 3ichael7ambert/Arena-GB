@@ -57,7 +57,7 @@ const struct projectile_def_t scene_10_projectiles[] = {
             .right = 15,
             .top = -16
         },
-        .anim_tick = 15,
+        .anim_tick = 255,
         .animations = {
             {
                 .start = 0,

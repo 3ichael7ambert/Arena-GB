@@ -16,10 +16,10 @@ _actor_19_update::
 
 1$:
         ; Variable Set To Random
-        VM_RAND                 VAR_S2A0_ENEMY_MOVEMENT, 1, 4
+        VM_RAND                 VAR_S2A0__PLAYER_HEALTH, 1, 4
 
         ; Switch Variable
-        VM_SWITCH               VAR_S2A0_ENEMY_MOVEMENT, 4, 0
+        VM_SWITCH               VAR_S2A0__PLAYER_HEALTH, 4, 0
         .dw 1, 2$
         .dw 2, 3$
         .dw 3, 4$
@@ -133,7 +133,7 @@ _actor_19_update::
 6$:
 
         ; Actor Set Active
-        VM_SET_CONST            .LOCAL_ACTOR, 0
+        VM_SET_CONST            .LOCAL_ACTOR, 1
 
         ; If Actor .LTE 5 tiles from Actor
         VM_ACTOR_GET_POS        .LOCAL_ACTOR
@@ -194,6 +194,16 @@ _actor_19_update::
         VM_JUMP                 8$
 7$:
 8$:
+
+        ; If Variable .EQ Value
+        VM_IF_CONST             .EQ, VAR_S2A2_HEALTH, 0, 9$, 0
+        VM_JUMP                 10$
+9$:
+        ; Actor Deactivate
+        VM_SET_CONST            .LOCAL_ACTOR, 1
+        VM_ACTOR_DEACTIVATE     .LOCAL_ACTOR
+
+10$:
 
         ; Idle
         VM_IDLE
