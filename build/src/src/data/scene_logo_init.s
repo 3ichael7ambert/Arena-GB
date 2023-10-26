@@ -57,5 +57,8 @@ _scene_logo_init::
         VM_RAISE                EXCEPTION_CHANGE_SCENE, 3
             IMPORT_FAR_PTR_DATA _scene_title_screen
 
+        ; Variable Set To False
+        VM_SET_CONST            VAR_LEVEL, 0
+
         ; Stop Script
         VM_STOP

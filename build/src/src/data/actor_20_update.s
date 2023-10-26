@@ -15,13 +15,13 @@ _actor_20_update::
 
 1$:
         ; If Variable .EQ Value
-        VM_IF_CONST             .EQ, VAR_S3A3_PLAYER_HEALTH, 4, 2$, 0
+        VM_IF_CONST             .EQ, VAR_PLAYERHEALTH, 4, 2$, 0
         ; If Variable .EQ Value
-        VM_IF_CONST             .EQ, VAR_S3A3_PLAYER_HEALTH, 3, 4$, 0
+        VM_IF_CONST             .EQ, VAR_PLAYERHEALTH, 3, 4$, 0
         VM_JUMP                 5$
 4$:
         ; Actor Set Active
-        VM_SET_CONST            .LOCAL_ACTOR, 2
+        VM_SET_CONST            .LOCAL_ACTOR, 3
 
         ; Actor Set Animation Frame
         VM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 3
@@ -30,11 +30,11 @@ _actor_20_update::
 5$:
 
         ; If Variable .EQ Value
-        VM_IF_CONST             .EQ, VAR_S3A3_PLAYER_HEALTH, 2, 6$, 0
+        VM_IF_CONST             .EQ, VAR_PLAYERHEALTH, 2, 6$, 0
         VM_JUMP                 7$
 6$:
         ; Actor Set Active
-        VM_SET_CONST            .LOCAL_ACTOR, 2
+        VM_SET_CONST            .LOCAL_ACTOR, 3
 
         ; Actor Set Animation Frame
         VM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 2
@@ -43,11 +43,11 @@ _actor_20_update::
 7$:
 
         ; If Variable .EQ Value
-        VM_IF_CONST             .EQ, VAR_S3A3_PLAYER_HEALTH, 1, 8$, 0
+        VM_IF_CONST             .EQ, VAR_PLAYERHEALTH, 1, 8$, 0
         VM_JUMP                 9$
 8$:
         ; Actor Set Active
-        VM_SET_CONST            .LOCAL_ACTOR, 2
+        VM_SET_CONST            .LOCAL_ACTOR, 3
 
         ; Actor Set Animation Frame
         VM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 1
@@ -56,11 +56,11 @@ _actor_20_update::
 9$:
 
         ; If Variable .EQ Value
-        VM_IF_CONST             .EQ, VAR_S3A3_PLAYER_HEALTH, 0, 10$, 0
+        VM_IF_CONST             .EQ, VAR_PLAYERHEALTH, 0, 10$, 0
         VM_JUMP                 11$
 10$:
         ; Actor Set Active
-        VM_SET_CONST            .LOCAL_ACTOR, 2
+        VM_SET_CONST            .LOCAL_ACTOR, 3
 
         ; Actor Set Animation Frame
         VM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0
@@ -71,7 +71,7 @@ _actor_20_update::
         VM_JUMP                 3$
 2$:
         ; Actor Set Active
-        VM_SET_CONST            .LOCAL_ACTOR, 2
+        VM_SET_CONST            .LOCAL_ACTOR, 3
 
         ; Actor Set Animation Frame
         VM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 4

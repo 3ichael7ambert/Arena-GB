@@ -7,7 +7,10 @@
 
 .area _CODE_255
 
-.LOCAL_TMP0_WAIT_ARGS = -1
+.LOCAL_TMP0_HAS_LOADED = -1
+.LOCAL_TMP1_PEEK_VALUE = -1
+.LOCAL_TMP2_PEEK_VALUE = -1
+.LOCAL_TMP3_WAIT_ARGS = -1
 
 ___bank_scene_6_init = 255
 .globl ___bank_scene_6_init
@@ -18,7 +21,10 @@ _scene_6_init::
         VM_RESERVE              1
 
         ; Variable Set To Value
-        VM_SET_CONST            VAR_S4A4_PLAYER_HEALTH, 4
+        VM_SET_CONST            VAR_S4A4_HEALTH, 3
+
+        ; Variable Set To Value
+        VM_SET_CONST            VAR_PLAYERHEALTH, 4
 
         ; Input Script Attach
         VM_CONTEXT_PREPARE      4, ___bank_script_input_2, _script_input_2
@@ -27,9 +33,32 @@ _scene_6_init::
         ; Variable Set To Value
         VM_SET_CONST            VAR_S4_HEALTH, 4
 
+        ; Variable Copy
+        VM_SET                  VAR_ENEMYCOUNT, VAR_MASENEMYCOUNT
+
+        ; Save Data to Slot 0
+        VM_RAISE                EXCEPTION_SAVE, 1
+            .SAVE_SLOT 0
+        VM_POLL_LOADED          .LOCAL_TMP0_HAS_LOADED
+        VM_IF_CONST             .EQ, .LOCAL_TMP0_HAS_LOADED, 1, 1$, 0
+
+        ; Store VAR_LEVEL from save slot 0 into VAR_LEVEL
+        VM_SAVE_PEEK            .LOCAL_TMP1_PEEK_VALUE, VAR_LEVEL, VAR_LEVEL, 1, 0
+        VM_IF_CONST             .EQ, .LOCAL_TMP1_PEEK_VALUE, 1, 2$, 0
+        VM_SET_CONST            VAR_LEVEL, 0
+2$:
+
+        ; Store VAR_MASENEMYCOUNT from save slot 0 into VAR_MASENEMYCOUNT
+        VM_SAVE_PEEK            .LOCAL_TMP2_PEEK_VALUE, VAR_MASENEMYCOUNT, VAR_MASENEMYCOUNT, 1, 0
+        VM_IF_CONST             .EQ, .LOCAL_TMP2_PEEK_VALUE, 1, 3$, 0
+        VM_SET_CONST            VAR_MASENEMYCOUNT, 0
+3$:
+
+1$:
+
         ; Wait N Frames
-        VM_SET_CONST            .LOCAL_TMP0_WAIT_ARGS, 1
-        VM_INVOKE               b_wait_frames, _wait_frames, 0, .LOCAL_TMP0_WAIT_ARGS
+        VM_SET_CONST            .LOCAL_TMP3_WAIT_ARGS, 1
+        VM_INVOKE               b_wait_frames, _wait_frames, 0, .LOCAL_TMP3_WAIT_ARGS
 
         ; Fade In
         VM_SET_CONST_INT8       _fade_frames_per_step, 1

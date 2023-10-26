@@ -9,8 +9,8 @@
 BANKREF(bg_congratulations)
 
 const struct background_t bg_congratulations = {
-    .width = 32,
-    .height = 32,
+    .width = 20,
+    .height = 18,
     .tileset = TO_FAR_PTR_T(bg_congratulations_tileset),
     .cgb_tileset = { NULL, NULL },
     .tilemap = TO_FAR_PTR_T(bg_congratulations_tilemap),

@@ -12,6 +12,7 @@
 #include "data/scene_9_sprites.h"
 #include "data/scene_9_projectiles.h"
 #include "data/scene_9_init.h"
+#include "data/scene_9_p_hit1.h"
 
 BANKREF(scene_9)
 
@@ -31,9 +32,10 @@ const struct scene_t scene_9 = {
     .n_actors = 3,
     .n_triggers = 0,
     .n_sprites = 3,
-    .n_projectiles = 1,
+    .n_projectiles = 2,
     .actors = TO_FAR_PTR_T(scene_9_actors),
     .sprites = TO_FAR_PTR_T(scene_9_sprites),
     .projectiles = TO_FAR_PTR_T(scene_9_projectiles),
-    .script_init = TO_FAR_PTR_T(scene_9_init)
+    .script_init = TO_FAR_PTR_T(scene_9_init),
+    .script_p_hit1 = TO_FAR_PTR_T(scene_9_p_hit1)
 };

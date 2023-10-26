@@ -1,6 +1,6 @@
 #pragma bank 255
 
-// Scene: Scene 13
+// Scene: Congratulations
 
 #include "gbs_types.h"
 #include "data/bg_congratulations.h"
@@ -13,8 +13,8 @@
 BANKREF(scene_13)
 
 const struct scene_t scene_13 = {
-    .width = 32,
-    .height = 32,
+    .width = 20,
+    .height = 18,
     .type = SCENE_TYPE_TOPDOWN,
     .background = TO_FAR_PTR_T(bg_congratulations),
     .collisions = TO_FAR_PTR_T(scene_13_collisions),

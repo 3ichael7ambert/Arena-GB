@@ -32,7 +32,7 @@ const struct actor_t scene_10_actors[] = {
         .anim_tick = 15,
         .pinned = FALSE,
         .persistent = TRUE,
-        .collision_group = COLLISION_GROUP_1,
+        .collision_group = COLLISION_GROUP_2,
         .collision_enabled = TRUE,
         .script_update = TO_FAR_PTR_T(actor_19_update),
         .script = TO_FAR_PTR_T(actor_19_interact),
@@ -41,8 +41,8 @@ const struct actor_t scene_10_actors[] = {
     {
         // HP,
         .pos = {
-            .x = 40 * 16,
-            .y = 40 * 16
+            .x = 8 * 16,
+            .y = 24 * 16
         },
         .bounds = {
             .left = 0,
@@ -79,7 +79,7 @@ const struct actor_t scene_10_actors[] = {
         .anim_tick = 15,
         .pinned = FALSE,
         .persistent = FALSE,
-        .collision_group = COLLISION_GROUP_NONE,
+        .collision_group = COLLISION_GROUP_1,
         .collision_enabled = TRUE,
         .reserve_tiles = 0
     }

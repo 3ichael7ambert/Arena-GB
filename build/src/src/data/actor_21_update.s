@@ -15,9 +15,9 @@ _actor_21_update::
 
 1$:
         ; If Variable .EQ Value
-        VM_IF_CONST             .EQ, VAR_S2A2_PLAYER_HEALTH, 4, 2$, 0
+        VM_IF_CONST             .EQ, VAR_PLAYERHEALTH, 4, 2$, 0
         ; If Variable .EQ Value
-        VM_IF_CONST             .EQ, VAR_S2A2_PLAYER_HEALTH, 3, 4$, 0
+        VM_IF_CONST             .EQ, VAR_PLAYERHEALTH, 3, 4$, 0
         VM_JUMP                 5$
 4$:
         ; Actor Set Active
@@ -30,7 +30,7 @@ _actor_21_update::
 5$:
 
         ; If Variable .EQ Value
-        VM_IF_CONST             .EQ, VAR_S2A2_PLAYER_HEALTH, 2, 6$, 0
+        VM_IF_CONST             .EQ, VAR_PLAYERHEALTH, 2, 6$, 0
         VM_JUMP                 7$
 6$:
         ; Actor Set Active
@@ -43,7 +43,7 @@ _actor_21_update::
 7$:
 
         ; If Variable .EQ Value
-        VM_IF_CONST             .EQ, VAR_S2A2_PLAYER_HEALTH, 1, 8$, 0
+        VM_IF_CONST             .EQ, VAR_PLAYERHEALTH, 1, 8$, 0
         VM_JUMP                 9$
 8$:
         ; Actor Set Active
@@ -56,7 +56,7 @@ _actor_21_update::
 9$:
 
         ; If Variable .EQ Value
-        VM_IF_CONST             .EQ, VAR_S2A2_PLAYER_HEALTH, 0, 10$, 0
+        VM_IF_CONST             .EQ, VAR_PLAYERHEALTH, 0, 10$, 0
         VM_JUMP                 11$
 10$:
         ; Actor Set Active

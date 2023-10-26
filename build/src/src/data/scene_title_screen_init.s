@@ -92,5 +92,8 @@ _scene_title_screen_init::
 4$:
 
         VM_JUMP                 2$
+        ; Variable Set To Value
+        VM_SET_CONST            VAR_MASENEMYCOUNT, 1
+
         ; Stop Script
         VM_STOP
