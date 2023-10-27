@@ -23,8 +23,38 @@ _scene_10_init::
         ; Variable Set To Value
         VM_SET_CONST            VAR_S2A2_HEALTH, 3
 
+        ; Variables .ADD Value
+        VM_RPN
+            .R_REF      VAR_ENEMYCOUNT
+            .R_INT16    1
+            .R_OPERATOR .ADD
+            .R_STOP
+        VM_SET                  VAR_ENEMYCOUNT, .ARG0
+        VM_POP                  1
+
         ; Variable Set To Value
         VM_SET_CONST            VAR_PLAYERHEALTH, 4
+
+        ; If Variable .GT Value
+        VM_IF_CONST             .GT, VAR_LEVEL, 1, 1$, 0
+        ; Variable Set To Value
+        VM_SET_CONST            VAR_LEVEL, 1
+
+        VM_JUMP                 2$
+1$:
+        ; Variables .ADD Value
+        VM_RPN
+            .R_REF      VAR_LEVEL
+            .R_INT16    1
+            .R_OPERATOR .ADD
+            .R_STOP
+        VM_SET                  VAR_LEVEL, .ARG0
+        VM_POP                  1
+
+2$:
+
+        ; Variable Copy
+        VM_SET                  VAR_ENEMYCOUNT, VAR_MASENEMYCOUNT
 
         ; Input Script Attach
         VM_CONTEXT_PREPARE      4, ___bank_script_input_0, _script_input_0
@@ -33,6 +63,9 @@ _scene_10_init::
         ; Variable Set To Value
         VM_SET_CONST            VAR_PLAYERHEALTH, 4
 
+        ; Variable Set To Value
+        VM_SET_CONST            VAR_MASENEMYCOUNT, 1
+
         ; Variable Copy
         VM_SET                  VAR_ENEMYCOUNT, VAR_MASENEMYCOUNT
 
@@ -40,21 +73,21 @@ _scene_10_init::
         VM_RAISE                EXCEPTION_SAVE, 1
             .SAVE_SLOT 0
         VM_POLL_LOADED          .LOCAL_TMP0_HAS_LOADED
-        VM_IF_CONST             .EQ, .LOCAL_TMP0_HAS_LOADED, 1, 1$, 0
+        VM_IF_CONST             .EQ, .LOCAL_TMP0_HAS_LOADED, 1, 3$, 0
 
         ; Store VAR_LEVEL from save slot 0 into VAR_LEVEL
         VM_SAVE_PEEK            .LOCAL_TMP1_PEEK_VALUE, VAR_LEVEL, VAR_LEVEL, 1, 0
-        VM_IF_CONST             .EQ, .LOCAL_TMP1_PEEK_VALUE, 1, 2$, 0
+        VM_IF_CONST             .EQ, .LOCAL_TMP1_PEEK_VALUE, 1, 4$, 0
         VM_SET_CONST            VAR_LEVEL, 0
-2$:
+4$:
 
         ; Store VAR_MASENEMYCOUNT from save slot 0 into VAR_MASENEMYCOUNT
         VM_SAVE_PEEK            .LOCAL_TMP2_PEEK_VALUE, VAR_MASENEMYCOUNT, VAR_MASENEMYCOUNT, 1, 0
-        VM_IF_CONST             .EQ, .LOCAL_TMP2_PEEK_VALUE, 1, 3$, 0
+        VM_IF_CONST             .EQ, .LOCAL_TMP2_PEEK_VALUE, 1, 5$, 0
         VM_SET_CONST            VAR_MASENEMYCOUNT, 0
-3$:
+5$:
 
-1$:
+3$:
 
         ; Wait N Frames
         VM_SET_CONST            .LOCAL_TMP3_WAIT_ARGS, 1

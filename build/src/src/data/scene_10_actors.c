@@ -10,6 +10,7 @@
 #include "data/sprite_hp.h"
 #include "data/actor_21_update.h"
 #include "data/sprite_bullet.h"
+#include "data/actor_2_update.h"
 
 BANKREF(scene_10_actors)
 
@@ -45,10 +46,10 @@ const struct actor_t scene_10_actors[] = {
             .y = 24 * 16
         },
         .bounds = {
-            .left = 0,
+            .left = -8,
             .bottom = 7,
-            .right = 15,
-            .top = -8
+            .right = 23,
+            .top = -24
         },
         .dir = DIR_DOWN,
         .sprite = TO_FAR_PTR_T(sprite_hp),
@@ -62,10 +63,10 @@ const struct actor_t scene_10_actors[] = {
         .reserve_tiles = 0
     },
     {
-        // Bullet,
+        // controller,
         .pos = {
-            .x = 64 * 16,
-            .y = 96 * 16
+            .x = 0 * 16,
+            .y = 0 * 16
         },
         .bounds = {
             .left = 0,
@@ -78,9 +79,10 @@ const struct actor_t scene_10_actors[] = {
         .move_speed = 16,
         .anim_tick = 15,
         .pinned = FALSE,
-        .persistent = FALSE,
-        .collision_group = COLLISION_GROUP_1,
+        .persistent = TRUE,
+        .collision_group = COLLISION_GROUP_NONE,
         .collision_enabled = TRUE,
+        .script_update = TO_FAR_PTR_T(actor_2_update),
         .reserve_tiles = 0
     }
 };

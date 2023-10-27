@@ -21,10 +21,31 @@ _scene_9_init::
         VM_RESERVE              1
 
         ; Variable Set To Value
-        VM_SET_CONST            VAR_S8A8_HEALTH, 3
+        VM_SET_CONST            VAR_PLAYERHEALTH, 4
 
         ; Variable Set To Value
-        VM_SET_CONST            VAR_PLAYERHEALTH, 4
+        VM_SET_CONST            VAR_S8A8_HEALTH, 3
+
+        ; Variables .ADD Value
+        VM_RPN
+            .R_REF      VAR_ENEMYCOUNT
+            .R_INT16    1
+            .R_OPERATOR .ADD
+            .R_STOP
+        VM_SET                  VAR_ENEMYCOUNT, .ARG0
+        VM_POP                  1
+
+        ; Variables .ADD Value
+        VM_RPN
+            .R_REF      VAR_LEVEL
+            .R_INT16    1
+            .R_OPERATOR .ADD
+            .R_STOP
+        VM_SET                  VAR_LEVEL, .ARG0
+        VM_POP                  1
+
+        ; Variable Copy
+        VM_SET                  VAR_ENEMYCOUNT, VAR_MASENEMYCOUNT
 
         ; Input Script Attach
         VM_CONTEXT_PREPARE      4, ___bank_script_input_6, _script_input_6

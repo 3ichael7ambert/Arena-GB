@@ -18,13 +18,13 @@ _actor_18_interact::
         VM_IF_CONST             .EQ, .LOCAL_TMP0_PARAM0_VALUE, 2, 1$, 0
         VM_JUMP                 2$
 1$:
-        ; Variable L1 = VAR_S4A4_HEALTH-1
+        ; Variable L1 = VAR_S8A8_HEALTH-1
         VM_RPN
-            .R_REF      VAR_S4A4_HEALTH
+            .R_REF      VAR_S8A8_HEALTH
             .R_INT16    1
             .R_OPERATOR .SUB
             .R_STOP
-        VM_SET                  VAR_S4A4_HEALTH, .ARG0
+        VM_SET                  VAR_S8A8_HEALTH, .ARG0
         VM_POP                  1
 
         ; Stop Script

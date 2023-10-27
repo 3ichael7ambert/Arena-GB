@@ -4,21 +4,45 @@
 // Actors
 
 #include "gbs_types.h"
-#include "data/sprite_bullet.h"
-#include "data/sprite_npc003.h"
-#include "data/actor_9_update.h"
-#include "data/actor_9_interact.h"
 #include "data/sprite_hp.h"
 #include "data/actor_27_update.h"
+#include "data/sprite_bullet.h"
+#include "data/actor_26_update.h"
+#include "data/sprite_npc003.h"
+#include "data/actor_29_update.h"
+#include "data/actor_29_interact.h"
 
 BANKREF(scene_12_actors)
 
 const struct actor_t scene_12_actors[] = {
     {
-        // Bullet,
+        // HP,
         .pos = {
-            .x = 72 * 16,
-            .y = 88 * 16
+            .x = 8 * 16,
+            .y = 24 * 16
+        },
+        .bounds = {
+            .left = -8,
+            .bottom = 7,
+            .right = 23,
+            .top = -24
+        },
+        .dir = DIR_DOWN,
+        .sprite = TO_FAR_PTR_T(sprite_hp),
+        .move_speed = 16,
+        .anim_tick = 15,
+        .pinned = TRUE,
+        .persistent = TRUE,
+        .collision_group = COLLISION_GROUP_NONE,
+        .collision_enabled = FALSE,
+        .script_update = TO_FAR_PTR_T(actor_27_update),
+        .reserve_tiles = 0
+    },
+    {
+        // controller,
+        .pos = {
+            .x = 16 * 16,
+            .y = 0 * 16
         },
         .bounds = {
             .left = 0,
@@ -31,16 +55,17 @@ const struct actor_t scene_12_actors[] = {
         .move_speed = 16,
         .anim_tick = 15,
         .pinned = FALSE,
-        .persistent = FALSE,
-        .collision_group = COLLISION_GROUP_1,
+        .persistent = TRUE,
+        .collision_group = COLLISION_GROUP_NONE,
         .collision_enabled = TRUE,
+        .script_update = TO_FAR_PTR_T(actor_26_update),
         .reserve_tiles = 0
     },
     {
         // Monkey,
         .pos = {
-            .x = 184 * 16,
-            .y = 16 * 16
+            .x = 160 * 16,
+            .y = 24 * 16
         },
         .bounds = {
             .left = 0,
@@ -56,31 +81,8 @@ const struct actor_t scene_12_actors[] = {
         .persistent = TRUE,
         .collision_group = COLLISION_GROUP_2,
         .collision_enabled = TRUE,
-        .script_update = TO_FAR_PTR_T(actor_9_update),
-        .script = TO_FAR_PTR_T(actor_9_interact),
-        .reserve_tiles = 0
-    },
-    {
-        // HP,
-        .pos = {
-            .x = 8 * 16,
-            .y = 24 * 16
-        },
-        .bounds = {
-            .left = 0,
-            .bottom = 7,
-            .right = 15,
-            .top = -8
-        },
-        .dir = DIR_DOWN,
-        .sprite = TO_FAR_PTR_T(sprite_hp),
-        .move_speed = 16,
-        .anim_tick = 15,
-        .pinned = TRUE,
-        .persistent = TRUE,
-        .collision_group = COLLISION_GROUP_NONE,
-        .collision_enabled = FALSE,
-        .script_update = TO_FAR_PTR_T(actor_27_update),
+        .script_update = TO_FAR_PTR_T(actor_29_update),
+        .script = TO_FAR_PTR_T(actor_29_interact),
         .reserve_tiles = 0
     }
 };

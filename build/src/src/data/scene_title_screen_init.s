@@ -20,6 +20,15 @@ _scene_title_screen_init::
 
         VM_RESERVE              5
 
+        ; Variable Set To True
+        VM_SET_CONST            VAR_LEVEL, 1
+
+        ; Variable Set To Value
+        VM_SET_CONST            VAR_ENEMYCOUNT, 1
+
+        ; Variable Set To Value
+        VM_SET_CONST            VAR_MASENEMYCOUNT, 1
+
         ; Actor Deactivate
         VM_SET_CONST            .LOCAL_ACTOR, 0
         VM_ACTOR_DEACTIVATE     .LOCAL_ACTOR
@@ -92,8 +101,5 @@ _scene_title_screen_init::
 4$:
 
         VM_JUMP                 2$
-        ; Variable Set To Value
-        VM_SET_CONST            VAR_MASENEMYCOUNT, 1
-
         ; Stop Script
         VM_STOP
