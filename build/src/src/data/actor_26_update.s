@@ -52,6 +52,15 @@ _actor_26_update::
         VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED
         VM_OVERLAY_WAIT         .UI_MODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/
 
+        ; Variables .ADD Value
+        VM_RPN
+            .R_REF      VAR_MASENEMYCOUNT
+            .R_INT16    1
+            .R_OPERATOR .ADD
+            .R_STOP
+        VM_SET                  VAR_MASENEMYCOUNT, .ARG0
+        VM_POP                  1
+
         ; Load Scene
         VM_SET_CONST_INT8       _fade_frames_per_step, 3
         VM_FADE_OUT             1
