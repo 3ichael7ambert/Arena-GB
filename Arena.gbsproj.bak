@@ -2514,7 +2514,8 @@
                                 "variable": "12",
                                 "operator": ">",
                                 "comparator": 1,
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__collapse": true
                             },
                             "children": {
                                 "true": [
@@ -6871,7 +6872,8 @@
                                 "value": 1,
                                 "minValue": "0",
                                 "maxValue": "32767",
-                                "clamp": false
+                                "clamp": false,
+                                "__collapse": true
                             },
                             "id": "d68fd20f-9b86-464f-86ab-137bed4b79a8"
                         },
@@ -6885,7 +6887,9 @@
                                 "value": "0",
                                 "minValue": "0",
                                 "maxValue": "32767",
-                                "clamp": false
+                                "clamp": false,
+                                "__collapse": true,
+                                "__comment": true
                             },
                             "id": "297594a1-1273-4487-a23a-87db3ab3b495"
                         }
@@ -6957,8 +6961,8 @@
                     "hit2Script": [],
                     "hit3Script": [],
                     "id": "95c81450-c98d-4655-921b-dc61786ce59b",
-                    "x": 0,
-                    "y": 0
+                    "x": 4,
+                    "y": 2
                 },
                 {
                     "name": "Monkey",
@@ -15963,7 +15967,8 @@
                                 "value": 1,
                                 "minValue": "0",
                                 "maxValue": "32767",
-                                "clamp": false
+                                "clamp": false,
+                                "__collapse": true
                             },
                             "id": "eb4151d5-e53e-469b-bab7-f9b024b746b5"
                         },
@@ -15977,7 +15982,8 @@
                                 "value": "0",
                                 "minValue": "0",
                                 "maxValue": "32767",
-                                "clamp": false
+                                "clamp": false,
+                                "__comment": true
                             },
                             "id": "fd946c72-842b-4a2a-b3e8-ff358e37db4b"
                         }
@@ -54682,8 +54688,8 @@
         "startDirection": "right",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 0,
-        "worldScrollY": 0,
+        "worldScrollX": 94,
+        "worldScrollY": 219,
         "zoom": 63.199362978339195,
         "customColorsEnabled": false,
         "sgbEnabled": false,
@@ -54712,9 +54718,9 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            500,
-            292,
-            292
+            350,
+            204,
+            204
         ],
         "showNavigator": true,
         "defaultFontId": "26fa15df-3318-44ad-8bfd-feff8ba7991d",

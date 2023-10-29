@@ -33,9 +33,6 @@ _scene_0_init::
         VM_SET                  VAR_LEVEL, .ARG0
         VM_POP                  1
 
-        ; Variable Copy
-        VM_SET                  VAR_ENEMYCOUNT, VAR_MASENEMYCOUNT
-
         ; Variable Set To Value
         VM_SET_CONST            VAR_S5A5_HEALTH, 3
 

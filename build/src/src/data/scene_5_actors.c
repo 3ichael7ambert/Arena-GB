@@ -68,8 +68,8 @@ const struct actor_t scene_5_actors[] = {
     {
         // controller,
         .pos = {
-            .x = 0 * 16,
-            .y = 0 * 16
+            .x = 32 * 16,
+            .y = 16 * 16
         },
         .bounds = {
             .left = 0,
